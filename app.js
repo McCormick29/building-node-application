@@ -3,6 +3,7 @@ const chalk = require('chalk')
 const debug = require('debug')('app')
 const morgan = require('morgan')
 const path = require('path')
+const sessions = require('./src/data/sessions.json')
 
 const PORT = process.env.PORT || 3000;
 const app = express()
@@ -16,18 +17,17 @@ app.set('view engine', 'ejs')
 
 sessionsRouter.route('/')
     .get((req, res) => {
-        res.render('sessions', {sessions: [
-            { title: 'Session 1', description: 'this is session 1' },
-            { title: 'Session 2', description: 'this is session 2' },
-            { title: 'Session 3', description: 'this is session 3' },
-            { title: 'Session 4', description: 'this is session 4' },
-        ]
+        res.render('sessions', {
+            sessions,
     })
 })
 
-sessionsRouter.route('/1')
+sessionsRouter.route('/:id')
     .get((req, res)=>{
-        res.send('hello single sessions')
+        const id = req.params.id
+        res.render('session', {
+            session: sessions[id],
+        })
     })
 
 app.use('/sessions', sessionsRouter)

@@ -423,7 +423,7 @@ padding: 20px 0px;}
 {
 	background:transparent !important;
 	border:0px;
-	background-color:transparent ~important;
+	background-color:transparent !important;
 }
 nav.navbar
 {
@@ -447,7 +447,7 @@ header{padding:0px;}
 
 }
     
-}
+
 
 /****/
 @media (max-width:767px)
@@ -579,14 +579,14 @@ margin:30px 0px 0px 0px;
 {
 	background:transparent !important;
 	border:0px;
-	background-color:transparent ~important;
+	background-color:transparent !important;
 }
 nav.navbar
 {
 	min-height:27px;
 }
-     .banner span{font-size:20px;}
-}
+     .banner span {font-size:20px;}
+
 
 @media screen and (max-width: 400px) and (min-width: 320px) {
 
@@ -633,4 +633,3 @@ nav.navbar
 
 }
 }
-
